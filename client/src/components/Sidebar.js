@@ -8,7 +8,7 @@ const Sidebar = ({ onNewGroupClick, isOpen }) => {
                 isOpen ? "translate-x-0" : "-translate-x-full"
             } w-64`}
         >
-            <div className="p-4 text-lg font-bold">Menu Bar</div>
+            <div className="p-4 text-lg font-bold">Menu</div>
             <nav className="mt-4">
                 <NavLink
                     to="/dashboard"
@@ -31,14 +31,14 @@ const Sidebar = ({ onNewGroupClick, isOpen }) => {
                     New Group
                 </button>
                 <NavLink
-                    to="/contact"
+                    to="/"
                     className="block py-2.5 px-4 hover:bg-indigo-700"
                     activeClassName="bg-indigo-700"
                 >
                     Contact
                 </NavLink>
                 <NavLink
-                    to="/about"
+                    to="/"
                     className="block py-2.5 px-4 hover:bg-indigo-700"
                     activeClassName="bg-indigo-700"
                 >

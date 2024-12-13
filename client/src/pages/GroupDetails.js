@@ -23,15 +23,23 @@ const GroupDetails = () => {
     }, [id]);
 
     if (loading) {
-        return <div className="flex justify-center items-center min-h-screen">Loading...</div>;
+        return (
+            <div className="flex justify-center items-center min-h-screen pt-16">
+                Loading...
+            </div>
+        );
     }
 
     if (!group) {
-        return <div className="flex justify-center items-center min-h-screen">Group not found.</div>;
+        return (
+            <div className="flex justify-center items-center min-h-screen pt-16">
+                Group not found.
+            </div>
+        );
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6">
+        <div className="min-h-screen bg-gray-100 p-6 pt-24 pl-14">
             <h1 className="text-2xl font-bold mb-4">{group.name}</h1>
             <p className="text-gray-600 mb-2">Created by: {group.createdBy.name}</p>
             <p className="text-gray-600 mb-2">Total Members: {group.members.length}</p>

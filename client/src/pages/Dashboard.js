@@ -43,7 +43,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
+        <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center pt-24">
             <img
                 src="/dashboard_ad.png"
                 alt="Welcome"
