@@ -31,14 +31,14 @@ const Sidebar = ({ onNewGroupClick, isOpen }) => {
                     <i className="fa fa-plus-circle mr-3"></i> New Group
                 </button>
                 <NavLink
-                    to="/contact"
+                    to="/"
                     className="block py-2.5 px-4 hover:bg-indigo-700 flex items-center"
                     activeClassName="bg-indigo-700"
                 >
                     <i className="fa fa-envelope mr-3"></i> Contact
                 </NavLink>
                 <NavLink
-                    to="/about"
+                    to="/"
                     className="block py-2.5 px-4 hover:bg-indigo-700 flex items-center"
                     activeClassName="bg-indigo-700"
                 >
