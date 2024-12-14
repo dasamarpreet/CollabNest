@@ -13,3 +13,17 @@ API.interceptors.request.use((req) => {
 export const getGroups = () => API.get("/groups"); // Fetch groups
 export const createGroup = (groupData) => API.post("/groups/create", groupData); // Create new group
 export const getGroupById = (id) => API.get(`/groups/${id}`); // Fetch group details by ID
+
+// Create a new event
+export const createEvent = (formData) => {
+    return API.post("/events/create", formData, {
+        headers: {
+            "Content-Type": "multipart/form-data",
+        },
+    });
+};
+
+// Fetch event details by ID
+export const getEventById = (id) => {
+    return API.get(`/events/${id}`);
+};

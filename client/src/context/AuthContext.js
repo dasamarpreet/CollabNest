@@ -3,11 +3,20 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const AuthContext = createContext();
 
 export const useAuth = () => {
-    return useContext(AuthContext); // Ensure context is returned
+    return useContext(AuthContext);
 };
 
 const AuthProvider = ({ children }) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            setIsLoggedIn(true);
+        } else {
+            setIsLoggedIn(false);
+        }
+    }, []); // Runs once on component mount
 
     const login = (token) => {
         localStorage.setItem("token", token);
@@ -18,10 +27,6 @@ const AuthProvider = ({ children }) => {
         localStorage.removeItem("token");
         setIsLoggedIn(false);
     };
-
-    useEffect(() => {
-        setIsLoggedIn(!!localStorage.getItem("token")); // Check token on initial load
-    }, []);
 
     return (
         <AuthContext.Provider value={{ isLoggedIn, login, logout }}>

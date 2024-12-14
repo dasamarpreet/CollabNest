@@ -1,5 +1,6 @@
 const Group = require("../models/Group");
 const User = require("../models/User");
+const Event = require("../models/Event");
 
 exports.getGroups = async (req, res) => {
     try {
@@ -40,17 +41,24 @@ exports.createGroup = async (req, res) => {
     }
 };
 
+
 exports.getGroupById = async (req, res) => {
     const { id } = req.params;
     try {
         const group = await Group.findById(id)
             .populate("createdBy", "name email")
             .populate("members", "name email");
+
         if (!group) {
             return res.status(404).json({ message: "Group not found." });
         }
-        res.status(200).json(group);
+
+        // Fetch all events for the group
+        const events = await Event.find({ groupId: id });
+
+        res.status(200).json({ ...group._doc, events });
     } catch (error) {
+        console.error("Failed to fetch group details:", error);
         res.status(500).json({ message: "Failed to fetch group details." });
     }
 };

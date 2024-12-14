@@ -55,13 +55,13 @@ const Dashboard = () => {
                     onClick={handleCreateGroup}
                     className="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600"
                 >
-                    Create New Group
+                    <i className="fa fa-plus-circle mr-3"></i>New Group
                 </button>
                 <button
                     onClick={handleShowGroups}
                     className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
                 >
-                    Show Groups
+                    <i className="fa fa-users mr-3"></i>Show Groups
                 </button>
             </div>
             <Modal

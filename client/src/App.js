@@ -11,6 +11,7 @@ import GroupDetails from "./pages/GroupDetails";
 import Sidebar from "./components/Sidebar";
 import Modal from "./components/Modal";
 import { createGroup } from "./services/groupService";
+import EventDetails from "./pages/EventDetails";
 
 const App = () => {
     const { isLoggedIn } = useAuth(); // Access isLoggedIn from context
@@ -90,6 +91,7 @@ const App = () => {
                             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
                             <Route path="/groups" element={<PrivateRoute><Groups /></PrivateRoute>} />
                             <Route path="/group/:id" element={<PrivateRoute><GroupDetails /></PrivateRoute>} />
+                            <Route path="/event/:id" element={<EventDetails />} />
                             <Route path="/logout" element={<Navigate to="/" replace />} />
                         </Routes>
                         {isLoggedIn && <Footer />}

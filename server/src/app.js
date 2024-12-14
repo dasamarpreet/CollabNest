@@ -14,7 +14,8 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", require("./routes/authRoutes")); // Authentication
 app.use("/api/groups", require("./routes/groupRoutes")); // Groups
-app.use("/api/notes", require("./routes/noteRoutes")); // Notes
+// app.use("/api/notes", require("./routes/noteRoutes")); // Notes
+app.use("/api/events", require("./routes/eventRoutes"));
 
 // MongoDB Connection
 mongoose
