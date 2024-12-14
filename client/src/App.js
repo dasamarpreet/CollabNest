@@ -12,6 +12,7 @@ import Sidebar from "./components/Sidebar";
 import Modal from "./components/Modal";
 import { createGroup } from "./services/groupService";
 import EventDetails from "./pages/EventDetails";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 const App = () => {
     const { isLoggedIn } = useAuth(); // Access isLoggedIn from context
@@ -55,6 +56,11 @@ const App = () => {
         <Router>
             <div className="flex flex-col min-h-screen">
                 {isLoggedIn && <Header />}
+                {isLoggedIn && (
+                    <div className="relative">
+                        <Breadcrumbs />
+                    </div>
+                )}
                 <div className="flex flex-grow">
                     {isLoggedIn && (
                         <>
