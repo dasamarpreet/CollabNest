@@ -1,5 +1,5 @@
 import React from "react";
-
+// This is Modal to add New Group
 const Modal = ({ isOpen, onClose, onSubmit, children }) => {
     if (!isOpen) return null;
 
