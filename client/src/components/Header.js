@@ -1,15 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
     const navigate = useNavigate();
+    const location = useLocation(); // Get the current path
     const { logout } = useAuth();
 
     const handleLogout = () => {
         logout(); // Clear global auth state
         navigate("/"); // Redirect to login
     };
+
+    const isActive = (path) => location.pathname === path; // Check if the current path matches the button path
 
     return (
         <header className="fixed top-0 left-0 w-full bg-white text-black py-4 px-6 flex justify-between items-center shadow-lg z-50">
@@ -19,23 +22,29 @@ const Header = () => {
             <nav className="flex space-x-4">
                 <button
                     onClick={() => navigate("/dashboard")}
-                    className="px-4 py-2 rounded hover:bg-gray-100 flex items-center"
+                    className={`px-4 py-2 rounded flex items-center ${
+                        isActive("/dashboard") ? "bg-gray-200 font-bold" : "hover:bg-gray-100"
+                    }`}
                 >
-                    <i className="fa fa-home hidden sm:inline mr-2"></i> {/* Show text and icon on larger screens */}
-                    <span className="hidden sm:inline">Dashboard</span> {/* Text only visible on larger screens */}
-                    <i className="fa fa-home sm:hidden"></i> {/* Icon only visible on smaller screens */}
+                    <i className={`fa fa-home hidden sm:inline mr-2`}></i>
+                    <span className="hidden sm:inline">Dashboard</span>
+                    <i className="fa fa-home sm:hidden"></i>
                 </button>
                 <button
-                    onClick={() => navigate("/")}
-                    className="px-4 py-2 rounded hover:bg-gray-100 flex items-center"
+                    onClick={() => navigate("/contact")}
+                    className={`px-4 py-2 rounded flex items-center ${
+                        isActive("/contact") ? "bg-gray-200 font-bold" : "hover:bg-gray-100"
+                    }`}
                 >
                     <i className="fa fa-envelope hidden sm:inline mr-2"></i>
                     <span className="hidden sm:inline">Contact</span>
                     <i className="fa fa-envelope sm:hidden"></i>
                 </button>
                 <button
-                    onClick={() => navigate("/")}
-                    className="px-4 py-2 rounded hover:bg-gray-100 flex items-center"
+                    onClick={() => navigate("/about")}
+                    className={`px-4 py-2 rounded flex items-center ${
+                        isActive("/about") ? "bg-gray-200 font-bold" : "hover:bg-gray-100"
+                    }`}
                 >
                     <i className="fa fa-info-circle hidden sm:inline mr-2"></i>
                     <span className="hidden sm:inline">About Us</span>

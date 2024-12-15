@@ -69,8 +69,8 @@ const Login = () => {
                 <div className="relative w-[850px] h-[500px] bg-white rounded-lg shadow-lg overflow-hidden">
                     {/* Sign In Form */}
                     <div
-                        className={`absolute top-0 left-0 w-[50%] h-full flex flex-col justify-center items-center transition-transform duration-700 ${
-                            isSignup ? "opacity-0 z-10" : "opacity-100 z-20"
+                        className={`absolute top-0 left-0 w-[50%] h-full flex flex-col justify-center items-center transition-transform duration-700 ease-in-out ${
+                            isSignup ? "translate-x-[-100%]" : "translate-x-0"
                         }`}
                     >
                         <form onSubmit={handleSubmit} className="w-full max-w-xs text-center">
@@ -115,8 +115,8 @@ const Login = () => {
 
                     {/* Sign Up Form */}
                     <div
-                        className={`absolute top-0 left-[50%] w-[50%] h-full flex flex-col justify-center items-center transition-transform duration-700 ${
-                            isSignup ? "opacity-100 z-20" : "opacity-0 z-10"
+                        className={`absolute top-0 left-[50%] w-[50%] h-full flex flex-col justify-center items-center transition-transform duration-700 ease-in-out ${
+                            isSignup ? "translate-x-0" : "translate-x-[100%]"
                         }`}
                     >
                         <form onSubmit={handleSubmit} className="w-full max-w-xs text-center">
