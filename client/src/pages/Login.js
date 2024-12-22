@@ -67,7 +67,7 @@ const Login = () => {
                 </div>
             ) : (
                 <div className="relative w-[850px] h-[500px] bg-white rounded-lg shadow-lg overflow-hidden">
-                    {/* Sign In Form */}
+            {/* Sign In Form */}
                     <div
                         className={`absolute top-0 left-0 w-[50%] h-full flex flex-col justify-center items-center transition-transform duration-700 ease-in-out ${
                             isSignup ? "translate-x-[-100%]" : "translate-x-0"

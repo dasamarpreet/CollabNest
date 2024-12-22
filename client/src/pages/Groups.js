@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Groups = () => {
     const [groups, setGroups] = useState([]);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -13,6 +14,8 @@ const Groups = () => {
                 setGroups(response.data);
             } catch (error) {
                 console.error("Failed to fetch groups:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -22,6 +25,19 @@ const Groups = () => {
     const handleGroupClick = (groupId) => {
         navigate(`/group/${groupId}`); // Navigate to group details page
     };
+
+    if (loading) {
+        // return <div className="flex justify-center items-center min-h-screen pt-16">Loading...</div>;
+        return (
+                <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+                    <div className="flex space-x-2">
+                        <div className="w-3 h-3 bg-indigo-500 rounded-full animate-bounce"></div>
+                        <div className="w-3 h-3 bg-indigo-500 rounded-full animate-bounce delay-200"></div>
+                        <div className="w-3 h-3 bg-indigo-500 rounded-full animate-bounce delay-400"></div>
+                    </div>
+                </div>
+                );
+    }
 
     return (
         <div className="min-h-screen bg-gray-100 p-6 pl-14">
