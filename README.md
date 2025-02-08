@@ -18,18 +18,18 @@ It is a Real Time Collaboration Platform where users can invite & add their team
 <h3><b>WebApp Screenshots: -</b></h3>
 
 ![Screenshot (120)](https://github.com/user-attachments/assets/a62dc3c4-ea52-4a86-82c4-952839adeb67)
-<hr/>
+
 ![Screenshot (121)](https://github.com/user-attachments/assets/228f3104-85d7-4e0a-88ba-2542d02915e2)
-<hr/>
+
 ![Screenshot (122)](https://github.com/user-attachments/assets/164752d0-f352-4588-8023-9ce78842fde6)
-<hr/>
+
 ![Screenshot (123)](https://github.com/user-attachments/assets/4c7ab03e-6662-4dff-8d11-85b848a0d81d)
-<hr/>
+
 ![Screenshot (124)](https://github.com/user-attachments/assets/507e6d60-1356-4adc-bfba-813e89721493)
-<hr/>
+
 ![Screenshot (125)](https://github.com/user-attachments/assets/bbc26261-b836-42f2-96f0-3f8fe6702a7c)
-<hr/>
+
 ![Screenshot (126)](https://github.com/user-attachments/assets/ee86ae65-3a2d-40b0-9b1c-0c4615977947)
-<hr/>
+
 ![Screenshot (127)](https://github.com/user-attachments/assets/876f70c2-f15e-43e2-98a4-f365d21e7184)
 
